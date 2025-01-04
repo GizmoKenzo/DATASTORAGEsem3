@@ -134,7 +134,7 @@ CREATE TABLE instrument_rental (
  id SERIAL NOT NULL,
  rental_id VARCHAR(20) NOT NULL,
  price_of_rental DECIMAL(10) NOT NULL,
- rental_period INT NOT NULL CHECK (rental_period > 0),
+ rental_period INT NOT NULL,
  student_id INT NOT NULL,
  instrument INT NOT NULL,
  start_date DATE NOT NULL,
@@ -160,7 +160,7 @@ CREATE TABLE payment (
  student_id INT NOT NULL,
  date DATE,
  pricing_scheme_id INT NOT NULL,
- status VARCHAR(10) NOT NULL CHECK (status IN ('PAID', 'PENDING'))
+ status VARCHAR(10) NOT NULL,
 );
 
 ALTER TABLE payment ADD CONSTRAINT PK_payment PRIMARY KEY (id);
